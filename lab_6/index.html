@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>lab_6</title>
+<script type="text/javascript">
+// Задача 1
+/*
+    var array = new Array(0, 1, 2, 3, 4, 5, 6, 7);
+        document.write("<p>Массив до удаления: " + array.join(", "));
+        var index = prompt("Выберите индекс элемента для удаления: " + array.join(", "));
+       
+        // Удаление элемента масива по указанному индексу.
+        delete array[index];
+        document.write("<p>Массив после удаления: " + array.join(", "));
+*/
+
+
+
+// Задача 2
+
+let vacation = {
+        turkey: {
+          price: 2800,
+          img: "https://cdn2.tu-tu.ru/image/pagetree_node_data/1/96d3bca47d5512abae36591011678b35/",
+          description:
+            "Турция – государство на юго-востоке Европы и юго-западе Азии, культура которого сочетает древнегреческие, персидские, римские, византийские и османские традиции."
+        },
+        egypt: {
+          price: 2000,
+          img: "https://triplook.me/media/countries/photo/0/6/12.jpg",
+          description:
+            "Египет – страна в Северо-Восточной Африке и на Ближнем Востоке. О ее богатой истории, насчитывающей более пяти тысяч лет, напоминают археологические памятники в плодородной долине реки Нил, среди которых пирамиды Гизы, Большой сфинкс, а также Карнакский храм"
+        },
+        spain: {
+          price: 4500,
+          img: "https://d16yj43vx3i1f6.cloudfront.net/uploads/2019/05/Madrid_Spain_GettyImages-927418584-1088x725.jpg",
+          description:
+            "Испания – европейская страна, расположенная на Пиренейском полуострове. Территория Испании разделена на 17 автономных регионов. В столице страны, Мадриде, находятся Королевский дворец и музей Прадо, где хранятся произведения европейских мастеров."
+        },
+        france: {
+          price: 3500,
+          img: "https://travel-picture.ru/wp-content/uploads/2017/12/%D0%BF%D0%B0%D1%80%D0%B8%D0%B6.jpg",
+          description:
+            "Франция – это страна в Западной Европе, на территории которой находятся средневековые города, альпийские деревни и пляжи Средиземного моря."
+        },
+        somali: {
+          price: 10,
+          img: "https://ic.pics.livejournal.com/kwakin_misha/65622566/4730394/4730394_original.jpg",
+          description:
+            "Республика Сомали́ — восточноафриканское государство. В результате гражданской войны и деятельности сепаратистов Сомали на долгое время фактически прекратило своё существование и распалось на множество частей."
+        }
+      };
+let country = prompt("dfs","somali");
+let people = +prompt("Сколько человек летит?",2);
+let days = +prompt("На сколько дней хотите полететь?",7);
+
+
+/*vacation.*/cals = function (people, days, country) { // если привязывать к  выводит доп пустую карточку
+    var result = people * days * vacation[country].price;
+    return result;
+};
+document.write('<button id="click">Стоимость тура</button> <h2 id="h2"></h2>');
+var summ =/*vacation.*/cals(people,days,country);
+var btn = document.getElementById('click');
+var h2 = document.getElementById('h2');
+btn.addEventListener('click', function() {
+    h2.innerHTML = "Стоимость тура "+summ+" грн";
+    btn.remove();
+});
+      for (var countrys in vacation) {
+        document.write(
+            '<div class="card" style="width: 18rem;">'+
+                '<img src="'+vacation[countrys].img+'" class="card-img-top" alt="...">'+
+                '<div class="card-body">'+
+                '<h5 class="card-title">Цена тура '+vacation[countrys].price+' грн.</h5>'+
+                '<p class="card-text">'+vacation[countrys].description+'</p>'+
+                '</div>'+
+            '</div>');
+}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>lab_5</title>
+<style>
+    div{
+        position: relative;
+        overflow: hidden;
+        height: 121px;
+        width: 626px;
+    }
+    img{
+        position: absolute;
+        width: 626px;
+    }
+</style>
+<script type="text/javascript">
+
+//Задача 1.
+/*
+    var instance = { propertyA: 222, propertyB: 444 };
+     
+     // Вывод значений свойств.
+     document.write("<p>instance.propertyA = " + instance.propertyA);
+     document.write("<p>instance.propertyB = " + instance.propertyB);
+     document.write("<hr/>");
+     // Присвоение новых значений свойствам.
+     instance.propertyA = 333;       // 1 способ.
+     instance["propertyB"] = 555;    // 2 способ.
+
+     // Вывод значений свойств.
+     document.write("<p>instance.propertyA = " + instance.propertyA);
+     document.write("<p>instance.propertyB = " + instance.propertyB);
+     document.write("<hr/>");
+     document.write("<p>instance = " + instance);
+*/
+
+
+
+
+//Задача 2
+/*
+        // Создаем обьект с именем point.
+        var point = new Object();
+        // Обращение к свойству x обьекта point.
+        // Если свойство отсутствует то оно создается автоматически и ему присваивается значение.
+        point.x = 10;
+        // Создаем свойство y и присваиваем ему значение.
+        point.y = 15;
+        // Добавляем к объекту метод.
+        point.f = function () {
+            document.write("<p>x = " + point.x + "<p>y = " + point.y);
+        };
+        point.f();
+*/
+
+
+
+
+//Задача 3
+/*
+var person = {
+    firstName:"Jim",
+    lastName:"Rainbow",
+    age: 30,
+    occupation: "Web Developer",
+    skill: "JavaScript"
+};
+
+document.write("<p>"+ person.firstName + " " + person.lastName+"</p>");
+person.age = 25;
+document.write("<p>Age: "+ person.age + " years old. <br>Skill: "+person.skill+"</p>")
+*/
+
+
+
+
+//Задача 4
+/*
+var human = {
+            firstName: "Alex",
+            secondName: "Jazun",
+            age: 27,
+            // Вложенный обьект.
+            occupation: {
+                company: "ZIEIT",
+                position: "Teacher" 
+            },
+            occupation1: {
+                company:  "Microsoft",
+                position: "Web Developer"
+            }
+
+        };
+        document.write("<p>First name: " + human.firstName);
+        document.write("<p>Second name: " + human.secondName);
+        document.write("<p>Age: " + human.age + " years old");
+        // Обращение к вложенному объекту.
+        document.write("<p>Company: "  + human.occupation.company);
+        document.write("<p>Position: " + human.occupation.position);
+        document.write("<hr/><p>Company: "  + human.occupation1.company);
+        document.write("<p>Position: " + human.occupation1.position);
+*/
+
+
+
+
+//Задача 5
+/*
+var human = new Object();
+ 
+human.firstName  = "Alex";
+human.secondName = "Jazun";
+human.age = 27;
+
+human.occupation = new Object();
+human.occupation.company  ="Microsoft";
+human.occupation.position ="Web Developer";
+   
+document.write("<p>First name: " + human.firstName);
+document.write("<p>Second name: " + human.secondName);
+document.write("<p>Age: " + human.age + " years old");
+// Обращение к вложенному объекту.
+document.write("<p>Company: "  + human.occupation.company);
+document.write("<p>Position: " + human.occupation.position);
+
+*/
+
+
+
+
+//Задача 6
+/*
+var human = {
+    firstName: "Alex",
+    secondName: "Jazun",
+    age: 27,
+    occupation: '<img src="https://beginpc.ru/images/internet/js_logo.jpg" width="150px" height="100px"/>',
+    show: function () {
+        document.write("<p>First name: " + this.firstName);
+        document.write("<p>Second name: " + this.secondName);
+        document.write("<p>Age: " + this.age + " years old<br/>");
+        document.write(this.occupation + "<hr/>");
+    },
+    changeWork: function (occupation) {
+        this.occupation = occupation;
+    }
+
+};
+human.show();
+human.changeWork('<img src="https://zavistnik.com/wp-content/uploads/2020/02/Yavaskript-zastavka2-750x375.jpg" width="150px" height="100px"/>');
+human.show();
+*/
+
+
+
+
+//Задача 7
+/*
+var builder = new Object();
+builder.createRoof = function () {
+    document.write("<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-4px;'/><br/></div>");
+};
+builder.createSecondFloor = function () {
+    document.write("<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-125px'/><br/></div>");
+};
+builder.createFirstFloor = function () {
+    document.write("<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-245px;'/><br/></div>");
+};
+
+builder.createBasement = function () {
+    document.write("<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-367px;'/><br/></div>");
+};
+// Строительство дома.
+builder.createRoof();
+builder.createSecondFloor();
+builder.createFirstFloor();
+builder.createBasement();
+
+document.write("<hr/><br/>")
+builder.createSecondFloor();
+builder.createFirstFloor();
+*/
+
+
+
+
+//Задача 8
+/*
+var house = {
+    roof: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-4px;'/><br/></div>",
+    secondFloor: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-125px'/><br/></div>",
+    firstFloor: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-245px;'/><br/></div>",
+    basement: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-367px;'/><br/></div>",
+    address: "<p style='color:green'>UK. London. Muswell Hill. N10<hr/>"
+};
+for (var element in house) {
+document.write(house[element]);
+}
+var arr = [];
+var _ind = 0;
+arr[0] = true;
+arr[4] = 1;
+arr[122] = "people";
+for (_ind in arr) {
+    arr[3] = false; 
+    console.log(_ind);
+}
+console.log(arr);
+*/
+
+
+
+
+//Задача 9
+/*
+var house = {
+    roof: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-4px;'/><br/></div>",
+    secondFloor: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-125px'/><br/></div>",
+    firstFloor: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-245px;'/><br/></div>",
+    basement: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-367px;'/><br/></div>",
+    address: "<p style='color:green'>UK. London. Muswell Hill. N10<hr/>"
+};
+document.write(house.roof);
+document.write(house.secondFloor);
+if ("thirdFloor" in house) {
+    document.write(house["thirdFloor"]);
+} else{
+    document.write(house["firstFloor"]); //1 этажа
+}
+document.write(house.firstFloor);
+document.write(house.basement);
+document.write(house.address);
+*/
+
+
+
+//Задача 10
+/*
+var house = {
+    roof: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-4px;'/><br/></div>",
+    secondFloor: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-125px'/><br/></div>",
+    firstFloor: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-245px;'/><br/></div>",
+    basement: "<div><img src='https://image.freepik.com/free-vector/school-building-on-white-background_1639-6277.jpg' style='top:-367px;'/><br/></div>",
+    address: "<p style='color:green'>UK. London. Muswell Hill. N10<hr/>"
+};
+        if ("secondFloor" in house) {
+            delete house.secondFloor;
+        }
+        if ("roof" in house) {
+            // Удаление свойства secondFloor из объекта house.
+            delete house.roof;
+        }
+        for (element in house) {
+            document.write(house[element]);
+        }
+*/
+</script>
+
+
+</head>
+<body>
+</body>
+</html>

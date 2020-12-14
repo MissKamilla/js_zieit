@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>lab_4</title>
+<script type="text/javascript">
+
+//Задание 1
+/*
+function MyFirstFunction() {
+            document.write("<p>Hello from MyFirstFunction!");
+            document.write("<p>How are you?");
+            document.write("<p>Goodbye!");
+        }
+
+        function MySecondFunction() {
+            document.write("<p>Hello from MySecondFunction!");
+        }
+        // Вызов функций.
+        MyFirstFunction();
+
+        document.write("<hr/>");
+
+        // Вызов функций.
+        MySecondFunction();
+
+        document.write("<hr/>");
+        <p>     -Определяет текстовый абзац, является блочным элементом, всегда начинается с новой строки, абзацы текста идущие друг за другом разделяются между собой отбивкой. 
+        <br>    -устанавливает перевод строки в том месте, где этот тег находится.
+        <hr />  - Рисует горизонтальную линию, которая по своему виду зависит от используемых параметров, а также браузера.  
+*/
+
+
+
+//Задание 2-3
+/*
+    var name;
+    var sname;
+    var age;
+
+    function ask() {
+        name = prompt("Введите свое имя:");//записали значение глобальной переменной
+        sname = prompt("Введите свою фамилию:");//записали значение глобальной переменной
+        age = prompt("Введите свой возраст:");//записали значение глобальной переменной
+    }
+
+    function say() {
+        document.write("Имя: " + name + "<br />");//вызвали значение глобальной переменной
+        document.write("Фамилия: " + sname + "<br />");//вызвали значение глобальной переменной
+        document.write("Возраст: " + age + "<br />");//вызвали значение глобальной переменной
+        document.write("<hr/>");
+    }
+
+    // Вызов функций.
+
+    do {
+            ask();
+            say();
+            repeater = confirm("Пройти заполнение еще раз?");
+        } while (repeater);
+*/
+
+
+
+//Задание 4
+/*
+var a = 10;
+var b = 15;
+var c = 20;
+var d = 21;
+var x1;
+var x2;
+function Sum1(){
+    var result = a+b;
+    document.write("<p>Sum1 result: " + result+"</p>");
+}
+function Sum2(x1,x2){
+    var result = x1+x2;
+    document.write("<p>Sum2 result: " + result+"</p>");
+}
+Sum1();
+Sum2();
+Sum2(c,d);
+*/
+
+
+
+//Задание 5
+/*
+function print(msg, count=3) {
+    for (var i = 0; i < count; i++) {
+        document.write("<p>"+msg+"</p>")
+    }
+    document.write("<hr/>")
+}
+print("hello");
+print("world",7);
+*/
+
+
+
+//Задание 6
+/*
+function Sum(a, b) {
+    alert('Hello!'); // return прерывает выполнение кода
+    return a + b;
+}
+function Power(a, b) {
+    return a ** b;
+}
+var res = Sum(2, 3);
+var power = Power(2,3);
+document.write("sum = "+res+"; power = "+power+";");
+*/
+
+
+
+//Задание 7
+/*
+function add(a, b) {
+            return a + b;
+        }
+        function sub(a, b) {
+            return a - b;
+        }
+        function mul(a, b) {
+            return a * b;
+        }
+        function div(a, b) {
+            return a / b;
+        }
+        function pow(a, b) {
+            return a ** b;
+        }
+        function sqrt(a, b) {
+            return (Math.sqrt(a) +"; " +Math.sqrt(b));
+        }
+        var operand1 = prompt("Введите первое число: ");
+        var sign = prompt("Введите знак арифметической операции: + - * / ^ √");
+        var operand2 = prompt("Введите второе число: ");
+        var result = undefined;
+
+        operand1 = parseInt(operand1);//глобальный метод parseInt
+        operand2 = parseInt(operand2);//глобальный метод parseInt
+        switch (sign) {
+            case "+":
+                result = add(operand1, operand2);
+                break;
+            case "-":
+                result = sub(operand1, operand2);
+                break;
+            case "*":
+                result = mul(operand1, operand2);
+                break;
+            case "/":
+                result = div(operand1, operand2);
+                break;
+            case "^":
+                result = pow(operand1, operand2);
+                break;
+            case "√":
+                result = sqrt(operand1, operand2);
+                break;
+            default:
+                document.write("<p><b style='color:red'>" + sign + "</b> - не является знаком арифметической операции.");
+        }
+        //написать корень на клавиатуре компьютера нажмите на клавишу Alt и, удерживая ее, наберите на цифровой клавиатуре 251
+        if(sign=="√") 
+        document.write("<p>Корень 1-го числа - " +operand1+" и 2-го числа - " + operand2 + " = " + result);
+        else if (result != undefined)
+            document.write("<p>" + operand1 + " " + sign + " " + operand2 + " = " + result);
+*/
+
+
+
+//Задание 8
+/*
+function max(a, b, c) {
+        //функция показывает максимальное значение аргумента, котороый передан при вызове
+        console.log(arguments);
+        var maxValue = Number.NEGATIVE_INFINITY; //присваеваем изначально
+        //минус бесконечность
+        document.write("<p>Number.NEGATIVE_INFINITY = " + maxValue + "<hr/>");
+        //перебираем циклом аргументы
+        for (
+          var i = 0;
+          i < arguments.length;
+          i++ // arguments - свойство объекта max - который есть функцией
+        )
+          if (arguments[i] > maxValue) maxValue = arguments[i];
+
+        return maxValue;
+      }
+      var res = max(-33, 33, 777, -666, -22, 888);
+      document.write(
+        "<p>Максимальное значение одного из аргументов функции = " + res
+      );
+
+    //Number - является объектом-обёрткой, позволяющей работать с числовыми значениями.
+
+    //Number.NEGATIVE_INFINITY - Возвращает значение, которое меньше любого отрицательного числа, которое может быть представлено.
+    // arguments — это подобный массиву объект, который содержит аргументы, переданные в функцию.
+    //функция max(a, b, c) не будет работать если в нее не передавать параметры
+*/
+
+
+
+//Задание 9
+/*
+function f(x, y, z) {
+
+    if (arguments.length !=3) {
+        document.write("<p><b style='color:red;'>ERROR:</b> <em> Требуется 3 аргумента при  вызове. Функция вызвана с " + arguments.length+" параметрами!</em>");
+    } else{
+        document.write("<p><b style='color:green;'>Правильный вызов функции.</b> Аргументы:     ");
+        for (var i = 0; i < arguments.length; i++) {
+            document.write(arguments[i] + ", ");
+        }
+    }
+
+          
+}
+f(1, 2, 3, 4);
+f(1, 2, 3);
+f(1, 2);
+*/
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+</body>
+</html>

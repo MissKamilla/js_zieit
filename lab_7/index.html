@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>lab_7</title>
+<script type="text/javascript">
+//Задание 1
+/*
+function btnClick()
+    {
+        let Txt1 = "";
+        let Txt2 = "";
+        Txt1 = document.Test.bt.value;
+        Txt2 = document.Test.bt.name;
+        document.getElementById('ex1').innerHTML="<hr>"+
+            "Вы нажали кнопку: " + Txt1.bold() +
+            " с именем: "  + Txt2.bold() +"<hr>";
+    }
+*/
+
+
+//Задание 3
+/*
+function btnClick()
+        {
+            if(document.Test1.Sex[0].checked){
+                document.Test1.Sex[1].click();
+            }else{
+                document.Test1.Sex[0].click();
+            }
+        }
+*/
+
+
+//Задание 4
+/*
+function btnClick2()
+{
+    var sI=document.Test2.Item.selectedIndex;
+    var Txt="";
+    Txt="Предложено "+document.Test2.Item.length+" напитков"+
+        "\nВыбран "+document.Test2.Item.options[sI].text+
+        " (value= "+document.Test2.Item.options[sI].value+
+        ", index= "+document.Test2.Item.options[sI].index+")";
+    if(document.Test2.Item.options[sI].defaultSelected)
+        {Txt+="\nЭтот напиток выбирается по умолчанию";}
+        alert(Txt);
+}
+*/
+
+function Complete() {
+    var Elem = "Фамилия:  "+ document.Sel1.Family.value+
+    "\nИмя: " +document.Sel1.Name.value+
+    "\nВозраст: " +document.Sel1.Age.value+
+    "\nТелефон: " +document.Sel1.Phone.value;
+    alert(Elem);
+}
+function CheckAge(age) {
+    if(age<18) return "18";
+    else return age;
+}
+
+var OK = "тетя Эльза чуствует себя хорошо.\nЮстас.";
+var  Problem= "тетя Эльза заболела.\nЮстас.";
+function  getDate() {
+    var today = new Date();
+    return today.toLocaleDateString() + "\n";
+}
+function CheckRadio(form, value) {
+    if(value =="Good") form.Letter.value = getDate() + OK;
+    else form.Letter.value = getDate() + Problem;
+}
+
+</script>
+
+
+</head>
+<body>
+    <!-- Задание 1 -->
+    <!-- <h1>Нажатие кнопки</h1>
+    <div id="ex1"></div>
+    <form name="Test">
+        <input type="button" name ="bt" onClick="btnClick();" value="Щелкни здесь!" >
+    </form> -->
+
+
+<!-- Задание 2 -->
+    <!-- <h1>Метод click флажка</h1>
+
+    <form name="Test">
+        Флажок <input type="checkbox" name ="ch" ><br>
+        Состояние флажка можно изменить этой кнопкой
+        <input type="button" onClick="document.Test.ch.click();" value="Смена состояния" >
+    </form> -->
+
+
+
+<!-- Задание 3 -->
+    <!-- <h1>Метод click группы переключателей</h1>
+
+    <form name="Test1" >
+        <input type="radio" name ="Sex" value="Man"checked>Мужской
+        <input type="radio" name ="Sex" value="Woman" >Женский
+        <br>Состояние переключателей можно изменить и этой кнопкой
+        <input type="button" onClick="btnClick();" value="Смена состояния" >
+    </form> -->
+
+
+<!-- Задание 4 -->
+    <!-- <form name="Test2" >
+        <select name="Item" size=5>
+            <option value="tae" selected>   tae </option>    
+            <option value="coffee">coffee</option>     
+            <option value="milk">  milk</option>   
+            <option value="cocoa"> cocoa</option>  
+            <option value="juice"> juice </option>    
+        </select>
+        <input type="button" onClick="Test2.Item.options[1].selected=true;" value="Пусть кофе" >
+        <input type="button" onClick="btnClick2();" value="Посмотрим" >
+    </form> -->
+
+
+
+<h1>Заполните анкету</h1>
+
+<FORM NAME="Sel1">
+    <!-- Анкета -->
+    <TABLE>
+        <TR><TD><B>Фамилия:<B></TD>
+            <TD><INPUT NAME="Family" SIZE=20
+                  onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+        <TR><TD><B>Имя:<B></TD>
+            <TD><INPUT NAME="Name" SIZE=20
+                  onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+        <TR><TD><B>Возраст:<B></TD>
+            <TD><INPUT NAME="Age" SIZE=3 VALUE="18"
+                  onBlur="this.value=CheckAge(this.value)"
+                  onFocus="this.select()"></TD></TR>
+        <TR><TD><B>Телефон:<B></TD>
+            <TD><INPUT NAME="Phone" SIZE=10></TD></TR>
+    </TABLE>
+    <!-- Кнопки готовности и сброса -->
+    <INPUT TYPE="button" VALUE="Готово" onClick="Complete();">
+    <INPUT TYPE="reset" VALUE="Сброс">
+</FORM>
+
+
+
+
+<H1>Отправьте телеграмму</H1>
+    <FORM NAME="Sel2">
+      <label
+        ><INPUT
+          TYPE="radio"
+          NAME="Code"
+          VALUE="Good"
+          onClick="if(this.checked) CheckRadio(this.form,this.value);"
+        />
+        Явка в норме
+      </label>
+      <BR />
+      <label
+        ><INPUT
+          TYPE="radio"
+          NAME="Code"
+          VALUE="Bad"
+          onClick="if(this.checked) CheckRadio(this.form,this.value);"
+        />
+        Явка провалена
+      </label>
+      <TEXTAREA NAME="Letter" ROWS="3" COLS="35"> </TEXTAREA>
+      <INPUT
+        TYPE="button"
+        VALUE="Готово"
+        onClick="alert(document.Sel2.Letter.value);"
+      />
+      <INPUT TYPE="reset" VALUE="Сброс" />
+    </FORM>
+
+</body>
+</html>
